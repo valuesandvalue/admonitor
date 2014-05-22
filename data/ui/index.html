@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Values &amp; Value</title>
+        
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/project.css" rel="stylesheet">
+        
+        <style type="text/css">
+        body    {
+            background: #ddd;
+        }
+        
+        .box-panel {
+            width: 460px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 60px;
+            background: #fff;
+            border-top: 1px solid #000;
+            overflow: auto;
+        }
+        
+        .inner-panel {
+            padding: 24px;
+        }
+        
+        .centre-panel {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .username-panel {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .justified  {
+            text-align: justify;
+            text-justify: newspaper;
+        }
+        
+        .bold{font-weight:bold;}
+        
+        #logo-panel {
+            width: 100%;
+            text-align: center;
+        }
+        
+        #logo-panel img {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+        
+        #login-panel {
+            width: 100%;
+            display: none;
+        }
+        
+        #login-panel #login-error   {
+            display: none;
+            color: #ff2244;
+            text-align: center;
+        }
+        
+        #user-panel {
+            width: 100%;
+            display: none;
+            text-align: center;
+        }
+        
+        #user-panel #username {
+            font-size: 2em;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+        
+        #message-panel  {
+            width: 100%;
+            display: none;
+        }
+        
+        #footer-panel {
+            background-color: #F5F5F5;
+            width: 100%;
+            height: 90px;
+            margin-top: 48px;
+            overflow: hidden;
+            text-align: center;
+            padding: 12px;
+        }
+        </style>
+    </head>
+    <body>
+        <script>
+        function doLogin()   {
+            window.postMessage("do-login", "*");
+        }
+
+        function checkLogin()   {
+            window.postMessage("check-login", "*");
+        }
+
+        function checkKey()   {
+            window.postMessage("check-key", "*");
+        }
+
+        function apiTest()   {
+            window.postMessage("api-test", "*");
+        }
+        
+        function doLogout()   {
+            window.postMessage("do-logout", "*");
+        }
+        
+        function requestKey()   {
+            window.postMessage("request-key", "*");
+        }
+        </script>
+        <div class="box-panel">
+            <div id="logo-panel"><img src="img/logo_small.png"></div>
+
+            <div id="login-panel" class="vavs-form inner-panel">
+                <div class="centre-panel">
+                    <div class="bottom-24px">
+                        <p id="login-info">Please enter you username and software key. If you don't have a software key you can request one from the <a href="" onclick="requestKey()">project website</a>.</p>
+                        <p id="login-error"></p>
+                    </div>
+                    <div class="inline-elements">
+                        <div class="control-group" id="div_id_username">
+                            <label class="control-label" for="id_username">Username:</label> 
+                            <div class="controls"><input id="id_username" name="username" size="24" type="text" class="inline-element textinput textInput"> 
+                            </div>
+                        </div>
+                        <div class="control-group" id="div_id_name">
+                            <label class="control-label" for="id_apikey">Software key:</label> 
+                            <div class="controls"><input id="id_apikey" name="apikey" size="24" type="text" class="inline-element textinput textInput"> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttonHolder">
+                        <button id="id-register" class="btn btn-primary button white push-down-24" name="register" onclick="doLogin()">register</button>
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+            
+            <div id="user-panel" class="vavs-form inner-panel">
+                <div class="username-panel">
+                    <div class="centre-panel"><p>Registered user:</p></div>
+                    <div class="centre-panel"><p id="username"></p></div>
+                </div>
+                
+                <button class="btn btn-primary button white" name="logout" onclick="doLogout()">unregister</button>
+            </div>
+            
+            <div id="message-panel" class="inner-panel"></div>
+            
+            <div id="footer-panel">
+                <p class="text-muted credit">Values &amp; Value is funded by an <a href="http://www.esrc.ac.uk/">ESRC</a> Professorial Fellowship (ES/K010786/1) and hosted by the Department of Sociology, <a href="http://www.gold.ac.uk/">Goldsmiths</a>, University of London.</p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+{
+    "name": "admonitor",
+    "fullName": "Values & Value Admonitor",
+    "id": "admonitor@values.doc.gold.ac.uk",
+    "description": "Add-on that monitors online advertising activity, for use in Values & Value research project.",
+    "author": "Values & Value project",
+    "license": "MPL 2.0",
+    "version": "1.0",
+    "homepage": "https://values.doc.gold.ac.uk",
+    "icon": "data/ui/img/vavs-icon.png",
+    "icon64": "data/ui/img/vavs-icon64.png",
+    "preferences": [{
+        "name": "user",
+        "title": "Current User",
+        "description": "Current user for add-on.",
+        "type": "string",
+        "value": "",
+        "hidden": true
+    }],
+    "permissions": {
+        "cross-domain-content": ["https://values.doc.gold.ac.uk"]
+    }
+}
