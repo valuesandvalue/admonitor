@@ -13,3 +13,4 @@ self-contained service or product.
 
 Values & Value is funded by an ESRC Professorial Fellowship (ES/K010786/1) and 
 hosted by the Department of Sociology, Goldsmiths, University of London.
+
